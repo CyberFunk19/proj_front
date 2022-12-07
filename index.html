@@ -10,8 +10,8 @@
 
 <body>
      <!-- GUI START -->
-     email<input id="email">
-    username<input id="username">
+    name<input id="name">
+    city<input id="city">
     <button onclick="addData()">Add data</button>
     <div id="display"></div>
 
@@ -38,7 +38,7 @@
 
         // post (Create)
         const addData =async () => {
-           await axios.post(MY_SERVER+"/", { city: username.value, name: email.value }).then((res) => console.log(res.data))
+           await axios.post(MY_SERVER+"/", { city: city.value, name: name.value }).then((res) => console.log(res.data))
             loadData()
         }
 
@@ -51,7 +51,7 @@
 
         const updStudent =async (id) => {
             // put (update)
-            const res=await axios.put(MY_SERVER +"/"+ id,{ city: username.value, name: email.value })
+            const res=await axios.put(MY_SERVER +"/"+ id,{ city: city.value, name: name.value })
             console.log(res)
             loadData()
         }
